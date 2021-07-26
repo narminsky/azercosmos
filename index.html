@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azercosmos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="top">
+                <div class="col-2">
+                    <a href="index.html"><img src="img/logo.svg" alt="Azercosmos logo"></a>
+                </div>
+                <div class="col-7 search">
+                    <input type="search">
+                    <img id="search-icon" src="img/search.svg" alt="search">
+                </div>
+                <div class="col-3 menu">
+                    <div class="col-4">
+                        <a href="#">
+                            <h1>News</h1>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#">
+                            <h1 id="contact_us">Contact us</h1>
+                        </a>
+                    </div>
+                    <div class="col-4 lang">
+                        <h1>EN</h1>
+                        <img src="img/down_arrow.svg" alt="arrow">
+                    </div>
+                </div>
+            </div>
+            <div class="menu_bar">
+                <div class="flex">
+                    <a href="send_message.html">
+                        <h1>ABOUT US</h1>
+                    </a>
+                </div>
+                <div class="flex">
+                    <a href="#">
+                        <h1>TELECOMMUNICATION</h1>
+                    </a>
+                </div>
+                <div class="flex">
+                    <a href="#">
+                        <h1>GROUND STATION</h1>
+                    </a>
+                </div>
+                <div class="flex">
+                    <a href="#">
+                        <h1>EARTH OBSERVATION</h1>
+                    </a>
+                </div>
+                <div class="flex">
+                    <a href="#">
+                        <h1>MEDIA CENTER</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="slider">
+            <ul class="slides">
+                <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
+                    <img src="img/satellite.jpg" alt="Satellite">
+                    <div class="slide-item">
+                        <h1>Get highly reliable satellite-based video and data services.</h1>
+                        <a href="#">Read more</a>
+                    </div>
+                </li>
+                <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
+                    <img src="img/satellite.jpg" alt="Satellite">
+                    <div class="slide-item">
+                        <h1>Get highly reliable satellite-based video and data services.</h1>
+                        <a href="#">Read more</a>
+                    </div>
+                </li>
+                <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
+                    <img src="img/satellite.jpg" alt="Satellite">
+                    <div class="slide-item">
+                        <h1>Get highly reliable satellite-based video and data services.</h1>
+                        <a href="#">Read more</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="slide-control">
+                <a href="#">
+                    <li></li>
+                </a>
+                <a href="#">
+                    <li></li>
+                </a>
+                <a href="#">
+                    <li></li>
+                </a>
+            </ul>
+        </section>
+        <div class="container">
+            <section class="products">
+                <div class="product-head">
+                    <h1>PRODUCTS</h1>
+                </div>
+                <div class="columns">
+                    <div class="col-3">
+                        <div class="position">
+                            <img id="video" src="img/video.jpg" alt="video">
+                            <div class="content">
+                                <h1>Video</h1>
+                                <p>
+                                    We deliver your content to 1/3 of the globe
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="position">
+                            <img id="data" src="img/data.jpg" alt="data">
+                            <div class="content">
+                                <h1>Data</h1>
+                                <p>
+                                    We provide instant data and broadband satellite services with low latency
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="position">
+                            <img id="teleport" src="img/teleport.jpg" alt="teleport">
+                            <div class="content">
+                                <h1>Teleport</h1>
+                                <p>
+                                    Our teleport operates to the highest standards and deploys the best infrastructure
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="position">
+                            <img id="azeconnexus" src="img/azconnexus.jpg" alt="azconnexus">
+                            <div class="content">
+                                <h1>Azeconnexus</h1>
+                                <p>
+                                    AzConnex es to deliver fast internet connectivity
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="news">
+                <div class="news-row">
+                    <h1>NEWS</h1>
+                    <a href="#">Read more</a>
+                </div>
+                <div class="media-row">
+                    <div class="flex-media">
+                        <div class="photo">
+                            <img src="img/news-1.jpg" alt="news-photo-1">
+                        </div>
+                        <div class="img-text">
+                            <span>1 april 2021</span>
+                            <p>
+                                Today, our company carries out research to apply the latest technologies.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex-media">
+                        <div class="photo">
+                            <img src="img/news2.jpg" alt="news-photo-2">
+                        </div>
+                        <div class="img-text">
+                            <span>7 june 2021</span>
+                            <p>
+                                Today, our company carries out research to apply the latest technologies.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex-media">
+                        <div class="photo">
+                            <img src="img/news3.jpg" alt="news-photo-3">
+                        </div>
+                        <div class="img-text">
+                            <span>15 june 2021</span>
+                            <p>
+                                Today, our company carries out research to apply the latest technologies.
+                            </p>
+                        </div>
+                    </div>
+                    <img src="img/news-arrow.svg" alt="news-arrow">
+                </div>
+            </section>
+        </div>
+        <section class="send-message">
+            <img id="effect-img" src="img/Rectangle-107.jpg" alt="rectangle">
+            <img src="img/GettyImages-172712050 1.jpg" alt="bg">
+            <div class="context">
+                <div class="left col-6">
+                    <h1>Send us a message</h1>
+                    <a href="#">Contact us</a>
+                </div>
+                <div class="right col-6">
+                    <p>
+                        Our technical and marketing experts are avilable to discuss your specific needs and how we can
+                        best help you achieve your long-term goals.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="slider2">
+            <div class="container2">
+                <div class="sliders">
+                    <div class="col-6">
+                        <img src="img/HEYDAR ALIYEV_ANIM.jpg" alt="Heyder Aliyev">
+                    </div>
+                    <div class="col-6">
+                        <div class="img-side-text">
+                            <h6>Heydar Aliyev</h6>
+                            <p>National Leader of Azerbaijan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sliders">
+                    <div class="img">
+                        <img src="img/HA-fondu.jpg" alt="Heyder Aliyev fondu">
+                    </div>
+                    <div class="img-bottom-text">
+                        <h6>Heydar Aliyev</h6>
+                        <p>Foundation</p>
+                    </div>
+                </div>
+                <div class="sliders">
+                    <div class="col-6">
+                        <img id="wide-cont-2" src="img/ILHAM_ALIYEV.jpg" alt="Ilham Aliyev">
+                    </div>
+                    <div class="col-6">
+                        <div class="img-side-text">
+                            <h6>Ilham Aliyev</h6>
+                            <p>President of Azerbaijan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sliders">
+                    <div class="img">
+                        <img src="img/aze-map.jpg" alt="Azerbaijan's map">
+                    </div>
+                    <div class="img-bottom-text">
+                        <h6>Land of fire</h6>
+                        <p>Azerbaijan Official <br> site</p>
+                    </div>
+                </div>
+                <!-- <img src="img/slider2-arrow.svg" alt="slider2-arrow"> -->
+            </div>
+            <img src="img/slider2-arrow.svg" alt="slider2-arrow">
+        </section>
+    </main>
+    <footer>
+        <div class="nav-links">
+            <div class="container3">
+                <div class="columns">
+                    <ul class="list">
+                        <li>
+                            <a href="#">About us</a>
+                        </li>
+                        <li>
+                            <a href="#">Our Story</a>
+                        </li>
+                        <li>
+                            <a href="#">Azercosmos Experience</a>
+                        </li>
+                        <li>
+                            <a href="#">Space Legacy</a>
+                        </li>
+                        <li>
+                            <a href="#">Research and Development</a>
+                        </li>
+                        <li>
+                            <a href="#">Corporate Responsibility</a>
+                        </li>
+                        <li>
+                            <a href="#">Partnership and Cooperation</a>
+                        </li>
+                        <li>
+                            <a href="#">Leadership</a>
+                        </li>
+                        <li>
+                            <a href="#">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="columns">
+                    <ul class="list">
+                        <li>
+                            <a href="#">Telecommunication</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Video</a>
+                        </li>
+                        <li>
+                            <a href="#">Data</a>
+                        </li>
+                        <li>
+                            <ul class="sub-list">
+                                <li>
+                                    <a href="#">Broadband</a>
+                                </li>
+                                <li>
+                                    <a href="#">Azconnexus</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="sub-list">
+                                <li>
+                                    <a href="#">Satellite Fleet</a>
+                                </li>
+                                <li>
+                                    <a href="#">Azerspace-1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Azerspace-2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Customer Stories</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="columns">
+                    <ul class="list">
+                        <li>
+                            <a href="#">Earth observation</a>
+                        </li>
+                        <li>
+                            <a href="#">About Azersky</a>
+                        </li>
+                        <li>
+                            <a href="#">Satellite Fleet</a>
+                        </li>
+                        <li>
+                            <a href="#">Products</a>
+                        </li>
+                        <li>
+                            <a href="#">Solutions</a>
+                        </li>
+                        <li>
+                            <a href="#">Gallery</a>
+                        </li>
+                    </ul>
+                    <ul class="list">
+                        <li>
+                            <a href="#">Ground station</a>
+                        </li>
+                        <li>
+                            <a href="#">Earth Station</a>
+                        </li>
+                        <li>
+                            <a href="#">Direct Receiving Station</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="columns">
+                    <ul class="list">
+                        <li>
+                            <a href="#">Tools and sesources</a>
+                        </li>
+                        <li>
+                            <a href="#">Tools</a>
+                        </li>
+                        <li>
+                            <a href="#">Case Studies</a>
+                        </li>
+                        <li>
+                            <a href="#">Download Center</a>
+                        </li>
+                        <li>
+                            <a href="#">Glossary</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="columns">
+                    <ul class="list">
+                        <li>
+                            <a href="#">News</a>
+                        </li>
+                        <li>
+                            <a href="#">Press release</a>
+                        </li>
+                        <li>
+                            <a href="#">Blogs</a>
+                        </li>
+                        <li>
+                            <a href="#">Events</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="columns">
+                    <ul class="list">
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                        <li>
+                            <a href="#">Send a message</a>
+                        </li>
+                        <li>
+                            <a href="#">Leave a review</a>
+                        </li>
+                        <li>
+                            <a href="#">Customer support</a>
+                        </li>
+                        <li>
+                            <a href="#">Our offices</a>
+                        </li>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Meet us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="container4">
+                <div class="left">
+                    <div class="flex-divs">
+                        <span>
+                            <a href="#">© 2011 - 2021 Azercosmos</a>
+                        </span>
+                    </div>
+                    <div class="flex-divs">
+                        <span>
+                            <a href="#">Privacy  Policy</a>
+                        </span>
+                    </div>
+                    <div class="flex-divs">
+                        <span>
+                            <a href="#">Quality and information security policy</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="flex-div">
+                        <ul class="social">
+                            <li class="social-item">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li class="social-item">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="social-item">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                            <li class="social-item">
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
