@@ -139,24 +139,59 @@ header .menu_bar .flex h1 {
 main {
     background: #FFFFFF;
 }
-main .slider {
+/* my additions */
+main section:first-child {
     max-width: 1366px;
     height: 660px;
     position: relative;
     margin: 0 auto;
 }
-main .slider img{
-    max-width: 100%;
-}
-main .slider .slides li {
+/* original slider */
+main .slider, .slider .imgs {
+    width: 100%;
+    height: 100%;
+    max-height: 660px;
     position: relative;
-}
-main .slider .slides .slide-item {
+  }
+  
+main .slider {
+    height: 100%;
+    max-height: 660px;
+  }
+  
+main .slider .imgs {
+    display: flex;
+    overflow: hidden;
+  }
+  
+main .slider .img {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    left: 100%;
+    /* animation duration can't be greater than variable interval in JS! */
+    /* check JS for other settings */
+    animation: .6s cubic-bezier(0.645, 0.045, 0.355, 1) 0s left;
+    animation-fill-mode: forwards;
+    background-size: cover !important;
+    background-position: 50% !important;
+  }
+  
+  /* Change images here */
+main .slider .img:nth-of-type(1) { background: url("../img/satellite.jpg"); }
+main .slider .img:nth-of-type(2) { background: url("../img/soldier.jpg"); }
+main .slider .img:nth-of-type(3) { background: url("../img/satellite.jpg"); }
+  
+/* my additions */
+main .slider .img span{
     position: absolute;
     bottom: 152px;
     left: 83px;
 }
-main .slider .slides .slide-item h1 {
+main .slider .img h1{
     width: 915px;
     font-family: 'Kanit', sans-serif;
     font-style: normal;
@@ -166,7 +201,7 @@ main .slider .slides .slide-item h1 {
     letter-spacing: 0.02em;
     color: #FFFFFF;
 }
-main .slider .slides .slide-item a{
+main .slider .img a {
     text-decoration: none;
     font-family: 'Gothic A1', sans-serif;
     font-style: normal;
@@ -178,22 +213,61 @@ main .slider .slides .slide-item a{
     border: 1px solid #FFFFFF;
     padding: 12px 24px;
 }
-main .slider .slide-control {
+
+
+main .slider .img span {
+    /* padding: 7px 20px;
+    background: rgba(0, 0, 0, .8);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    color: #f0f0f0;
+    font-size: 14px;
+    font-family: sans-serif; */
+  }
+  
+  .dots {
     position: absolute;
-    left: 668px;
     top: 19px;
-    z-index: 4;
-}
-main .slider .slide-control a {
-    width: 10px;
-    display: inline-block;
-}
-main .slider .slide-control li {
-    list-style-type: disc;
-    margin-right: 10px;
-    font-size: 150%;
-    color: gray;
-}
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: gray;
+    border-radius: 50%;
+    margin: 0 3px;
+    cursor: pointer;
+  }
+  
+  .active-dot {
+    background: #3f3f3f;
+    cursor: default;
+  }
+  
+  @keyframes leftNext {
+    from { left: 100%; }
+    to { left: 0; }
+  }
+  
+  @keyframes leftCurr {
+    from { left: 0; }
+    to { left: -100%; }
+  }
+  
+  @keyframes rightNext {
+    from { left: -100%; }
+    to { left: 0; }
+  }
+  
+  @keyframes rightCurr {
+    from { left: 0; }
+    to { left: 100%; }
+  }
 /* Products section */
 main .container {
     max-width: 1213px;
