@@ -15,39 +15,58 @@
 </head>
 
 <body>
-    <div class="bg-light">
+    <div class="bg-white">
         <div class="container">
-            <div class="row pt-3 header1">
+            <div class="row py-3 header1">
                 <div class="col-lg-2">
                     <img src="img/logo.svg" alt="" class="logo">
                 </div>
-                <div class="col-lg-6 search-bar">
+                <div class="col-lg-7 search-bar">
                     <input type="text" class="form-control" name="search" id="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div class="col-lg-1">
-                    <ul>News</ul>
-                </div>
-                <div class="col-lg-2">
-                    <ul>Contact us</ul>
+                    <ul class="main-ul">
+                        News
+                        <ul class="sub-ul d-none">
+                            <li>Events</li>
+                            <li>Blogs</li>
+                            <li>Press release</li>
+                        </ul>
+                    </ul>
                 </div>
                 <div class="col-lg-1">
-                    <select class="form-select" aria-label="Default select example">
+                    <ul class="main-ul active text-nowrap">
+                        Contact us
+                        <ul class="sub-ul d-none">
+                            <li>Meet us</li>
+                            <li>FAQ</li>
+                            <li>Our offices</li>
+                            <li>Customer support</li>
+                            <li>Leave a review</li>
+                            <li>Send a message</li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="col-lg-1 lang-section">
+                    <select class="form-select lang" aria-label="Default select example">
                         <option value="eng">EN</option>
                         <option value="aze">AZ</option>
                     </select>
                 </div>
             </div>
-            <div class="row header2 mt-3">
-                <div class="col">About us</div>
-                <div class="col">Telecommunication</div>
-                <div class="col">Ground Station</div>
-                <div class="col">Earth observation</div>
-                <div class="col">Media center</div>
+        </div>
+        <div class="container-fluid">
+            <div class="row header2 py-3">
+                <div class="w-20 active">About us</div>
+                <div class="w-20">Telecommunication</div>
+                <div class="w-20">Ground Station</div>
+                <div class="w-20">Earth observation</div>
+                <div class="w-20">Media center</div>
             </div>
         </div>
     </div>
-    <div class="container-fluid carousel-section pt-3 bg-light">
+    <div class="container-fluid carousel-section bg-white">
         <div id="carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true"
@@ -72,7 +91,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-light">
+    <div class="bg-white">
         <div class="container">
             <div class="row py-5">
                 <h1>Products</h1>
@@ -83,6 +102,7 @@
             <div class="row py-5">
                 <h1>News</h1>
             </div>
+            <!-- News -->
             <div class="row news pb-5">
                 <div class="news-carousel d-flex">
                     <div class="prev-slide">
