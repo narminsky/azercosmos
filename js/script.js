@@ -1,117 +1,125 @@
-$(document).ready(function(){
-$("#search-icon").click(function(){
-    $("input[type='search']").css("opacity", "1");
-    $("input[type='search']").css("transform", "all, 1s");
-    $("input[type='search']").css("transition", "1s");
+const productsArr = [{
+  h1: 'Video',
+  p: `We deliver your content`,
+  img: `video.jpg`
+}, {
+  h1: 'Data',
+  p: `We provide instant data and
+  broadband satellite services with
+  low latency`,
+  img: `data.jpg`
+}, {
+  h1: 'Teleport',
+  p: `Our teleport operates to the
+  highest standards and deploys
+  the best infrastructure`,
+  img: `teleport.jpg`
+}, {
+  h1: 'Azeconnexus',
+  p: `AzConnex es to deliver fast
+  internet connectivityy`,
+  img: `azconnexus.jpg`
+}];
+
+const products = document.querySelector('.products');
+
+// fetch products
+fetch(`
+https://newsapi.org/v2/everything?q=apple&from=2022-10-27&to=2022-10-27&sortBy=popularity&apiKey=2b8e326d6ced4217a494b674d251bb37`)
+  .then(reponse => reponse.json())
+  .then(data => {
+    console.log(data.articles[0]);
+    for (let i = 0; i < 4; i++) {
+      const text = `
+      <div class="col-lg-3">
+                    <div class="card">
+                      <img class="w-100" src="${data.articles[i].urlToImage}" alt="">
+                      <div class="card-body">
+                            <h1 class="card-title">${data.articles[i].title}</h1>
+                            <p class="card-text">${data.articles[i].content}</p>
+                            <div class="btn-row">
+                                <a href=${data.articles[i].url} target='_blank' class="btn btn-outline-white btn-lg">Read more</a>
+                            </div>
+                      </div>
+                    </div>
+        </div>
+      `;
+      products.innerHTML += text;
+    }
   });
 
-  var renew1 = setInterval(function() {
-    $("#video").fadeToggle(2000);
+// for (let i = 0; i < 4; i++) {
+//   const text = `
+//   <div class="col-lg-3">
+//                 <div class="card">
+//                 <img class="w-100" src="img/${productsArr[i].img}" alt="">
+//                     <div class="card-body">
+//                         <h1 class="card-title">${productsArr[i].h1}</h1>
+//                         <p class="card-text">${productsArr[i].p}</p>
+//                         <div class="btn-row">
+//                             <button class="btn btn-outline-white btn-lg">Read more</button>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//   `;
+//   products.innerHTML += text;
+// }
 
 
+// news carousel
 
-}, 2000);
-var renew2 = setInterval(function() {
-    $("#data").fadeToggle(3000);
+// creating
+const carouselItemsContainer = document.querySelector('.news-carousel .carousel-items');
+const prevSlide = document.querySelector('.prev-slide');
+const nextSlide = document.querySelector('.next-slide');
+let carouselItems;
+let width;
 
-
-}, 3000);
-var renew3 = setInterval(function() {
-    $("#teleport").fadeToggle(3000);
-
-
-}, 4000);
-var renew4 = setInterval(function() {
-    $("#azeconnexus").fadeToggle(3000);
-
-
-}, 5000);
-});
-// index page first slider 
-            {
-    const sliders = document.querySelectorAll(".slider");
-    // interval between switching images
-    // can't be less than your animation duration in css!
-    const interval = 2800;
-    // if you don't want to first animation last longer than other animations  
-    // set animDuration (in miliseconds) to your value of animation duration in css
-    const animDuration = 600;
-  
-    for (let i = 0; i < sliders.length; ++i) {
-      const slider = sliders[i];
-      const dots = slider.querySelector(".dots");
-      const sliderImgs = slider.querySelectorAll(".img");
-  
-      let currImg = 0;
-      let prevImg = sliderImgs.length - 1;
-      let intrvl;
-      let timeout;
-  
-      // Creates dots and add listeners to them
-      for (let i = 0; i < sliderImgs.length; ++i) {
-        const dot = document.createElement("div");
-        dot.classList.add("dot");
-        dots.appendChild(dot);
-        dot.addEventListener("click", dotClick.bind(null, i), false);
-      }
-  
-      const allDots = dots.querySelectorAll(".dot");
-      allDots[0].classList.add("active-dot");
-  
-      sliderImgs[0].style.left = "0";
-      timeout = setTimeout(() => {
-        animateSlider();
-        sliderImgs[0].style.left = "";
-        intrvl = setInterval(animateSlider, interval);
-      }, interval - animDuration);   
-  
-      /**
-       * Animates images
-       * @param {number} [nextImg] - index of next image to show
-       * @param {boolean} [right = false] - animate to right
-       */
-      function animateSlider(nextImg, right) {
-        if (!nextImg)
-          nextImg = currImg + 1 < sliderImgs.length ? currImg + 2 : 1;
-  
-        --nextImg;
-        sliderImgs[prevImg].style.animationName = "";
-  
-        if (!right) {
-          sliderImgs[nextImg].style.animationName = "leftNext";
-          sliderImgs[currImg].style.animationName = "leftCurr";
-        } 
-        else {
-          sliderImgs[nextImg].style.animationName = "rightNext";
-          sliderImgs[currImg].style.animationName = "rightCurr";
-        }
-  
-        prevImg = currImg;
-        currImg = nextImg;
-  
-        currDot = allDots[currImg];
-        currDot.classList.add("active-dot");
-        prevDot = allDots[prevImg];
-        prevDot.classList.remove("active-dot");
-      }
-  
-      /**
-       * Decides if animate to left or right and highlights clicked dot
-       * @param {number} num - index of clicked dot
-       */
-      function dotClick(num) {
-        if (num == currImg)
-          return false;
-  
-        clearTimeout(timeout);
-        clearInterval(intrvl);
-  
-        if (num > currImg)
-          animateSlider(num + 1);
-        else
-          animateSlider(num + 1, true);
-  
-        intrvl = setInterval(animateSlider, interval);
-      }
+// fetch API for news
+fetch(`https://newsapi.org/v2/everything?q=tesla&from=2022-09-28&sortBy=publishedAt&apiKey=2b8e326d6ced4217a494b674d251bb37`)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data.articles[0]);
+    for (let i = 0; i < 9; i++) {
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      const d = new Date(data.articles[i].publishedAt);
+      const text = `
+      <div class="col-lg-4">
+                            <div class="box">
+                                <img class="w-100" src="${data.articles[i].urlToImage}" alt="">
+                                <p class="published-date">${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}</p>
+                                <p class="news-content">${data.articles[i].title}</p>
+                            </div>
+                        </div>
+      `;
+      carouselItemsContainer.innerHTML += text;
     }
-  }
+    carouselItems = document.querySelectorAll('.news-carousel .carousel-items>div');
+    width = carouselItems[0].clientWidth;
+    carouselItems.forEach((value, index) => {
+      value.addEventListener('click', function () {
+        window.open(data.articles[index].url);
+      });
+    })
+  });
+
+// setting
+let transformMeasure = 0;
+let maxTransform = 3;
+
+prevSlide.addEventListener('click', function () {
+  if (transformMeasure != 0)
+    transformMeasure++;
+  carouselItems.forEach((value) => {
+    value.style.transform = `translateX(${transformMeasure * width}px)`
+  });
+});
+
+nextSlide.addEventListener('click', function () {
+  if (carouselItems.length + transformMeasure != maxTransform)
+    transformMeasure--;
+  carouselItems.forEach((value) => {
+    value.style.transform = `translateX(${transformMeasure * width}px)`
+  });
+});
