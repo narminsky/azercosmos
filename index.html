@@ -15,47 +15,59 @@
 </head>
 
 <body>
-    <div class="bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <div class="row py-3 header1">
-                <div class="col-lg-2">
-                    <img src="img/logo.svg" alt="" class="logo">
-                </div>
-                <div class="col-lg-7 search-bar">
-                    <input type="text" class="form-control" name="search" id="search">
+            <a class="navbar-brand" href="index.html">
+                <img style="width: 200px;" src="img/logo.svg">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex col search-bar">
+                    <input class="form-control me-2" type="text" aria-label="Search" id="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div class="col-lg-1">
-                    <ul class="main-ul">
-                        News
-                        <ul class="sub-ul d-none">
-                            <li>Events</li>
-                            <li>Blogs</li>
-                            <li>Press release</li>
+                </form>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown main-ul">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            News
+                        </a>
+                        <ul class="dropdown-menu sub-ul" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Events</a></li>
+                            <li><a class="dropdown-item" href="#">Blogs</a></li>
+                            <li><a class="dropdown-item" href="#">Press release</a></li>
                         </ul>
-                    </ul>
-                </div>
-                <div class="col-lg-1">
-                    <ul class="main-ul active text-nowrap">
-                        Contact us
-                        <ul class="sub-ul d-none">
-                            <li>Meet us</li>
-                            <li>FAQ</li>
-                            <li>Our offices</li>
-                            <li>Customer support</li>
-                            <li>Leave a review</li>
-                            <li>Send a message</li>
+                    </li>
+                    <li class="nav-item dropdown main-ul">
+                        <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Contact us
+                        </a>
+                        <ul class="dropdown-menu sub-ul" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Meet us</a></li>
+                            <li><a class="dropdown-item" href="#">FAQ</a></li>
+                            <li><a class="dropdown-item" href="#">Our offices</a></li>
+                            <li><a class="dropdown-item" href="#">Customer support</a></li>
+                            <li><a class="dropdown-item" href="#">Leave a review</a></li>
+                            <li><a class="dropdown-item" href="#">Send a message</a></li>
                         </ul>
-                    </ul>
-                </div>
-                <div class="col-lg-1 lang-section">
-                    <select class="form-select lang" aria-label="Default select example">
-                        <option value="eng">EN</option>
-                        <option value="aze">AZ</option>
-                    </select>
-                </div>
+                    </li>
+                    <li class="nav-item lang-section">
+                        <select class="form-select lang" aria-label="Default select example">
+                            <option value="eng">EN</option>
+                            <option value="aze">AZ</option>
+                        </select>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
+    <!-- my codes here -->
+    <div class="bg-white">
         <div class="container-fluid">
             <div class="row header2 py-3">
                 <div class="w-20 active">About us</div>

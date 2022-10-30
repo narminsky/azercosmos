@@ -1,51 +1,59 @@
-// header ul section
-const news = document.querySelector('.news-ul');
+// search bar hover
+$('.fa-magnifying-glass').mouseenter(function () {
+  $('#search').css({
+    "background-color": "#f6f6f6",
+    "transition": "all 1s"
+  })
+});
 
+$('.fa-magnifying-glass').mouseleave(function () {
+  $('#search').css({
+    "background-color": "white",
+    "transition": "all 1s"
+  })
+});
+
+// search bar focus-blur
+$('#search').focus(function () {
+  $(this).css({
+    "background-color": "#f6f6f6",
+    "transition": "all 1s"
+  })
+});
+
+$('#search').blur(function () {
+  $(this).css({
+    "background-color": "white",
+    "transition": "all 1s"
+  })
+});
+
+// sub ul elements d-none at the beginning
+$('.sub-ul').addClass('d-none');
+
+// opening sub ul list
 $('.main-ul').mouseenter(function (e) {
   if (e.currentTarget == $(this)[0]) {
-    $(this).children().eq(0).removeClass('d-none');
-    $(this).children().eq(0).animate({
+    $(this).children().eq(1).removeClass('d-none');
+    $(this).children().eq(1).animate({
       right: `100%`,
       opacity: 1,
     });
   }
 });
 
+// closing sub ul list
 $('.main-ul').mouseleave(function (e) {
   if (e.currentTarget == $(this)[0]) {
-    $(this).children().eq(0).animate({
+    $(this).children().eq(1).animate({
       right: `0%`,
       opacity: 0,
     })
-    $(this).children().eq(0).addClass('d-none');
+    $(this).children().eq(1).addClass('d-none');
   }
 });
 
 // products sections
-const productsArr = [{
-  h1: 'Video',
-  p: `We deliver your content`,
-  img: `video.jpg`
-}, {
-  h1: 'Data',
-  p: `We provide instant data and
-  broadband satellite services with
-  low latency`,
-  img: `data.jpg`
-}, {
-  h1: 'Teleport',
-  p: `Our teleport operates to the
-  highest standards and deploys
-  the best infrastructure`,
-  img: `teleport.jpg`
-}, {
-  h1: 'Azeconnexus',
-  p: `AzConnex es to deliver fast
-  internet connectivityy`,
-  img: `azconnexus.jpg`
-}];
-
-const products = document.querySelector('.products');
 
 // fetch products
 fetch(`
@@ -73,25 +81,6 @@ https://newsapi.org/v2/everything?q=apple&from=2022-10-27&to=2022-10-27&sortBy=p
       window.open(`${$(this).attr('url')}`);
     });
   });
-
-// for (let i = 0; i < 4; i++) {
-//   const text = `
-//   <div class="col-lg-3">
-//                 <div class="card">
-//                 <img class="w-100" src="img/${productsArr[i].img}" alt="">
-//                     <div class="card-body">
-//                         <h1 class="card-title">${productsArr[i].h1}</h1>
-//                         <p class="card-text">${productsArr[i].p}</p>
-//                         <div class="btn-row">
-//                             <button class="btn btn-outline-white btn-lg">Read more</button>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//   `;
-//   products.innerHTML += text;
-// }
-
 
 // news carousel
 
